@@ -13,7 +13,10 @@ import os
 import re
 import pprint
 import traceback
-
+# jrh - begin
+from converters import file_to_texture
+from view import draw_source, set_scene
+# jrh - end
 
 class Restart(Exception):
     """Causes a debugger to be restarted for the debugged python program."""
@@ -190,6 +193,13 @@ class Pdb(bdb.Bdb, cmd.Cmd):
 
     def interaction(self, frame, traceback):
         self.setup(frame, traceback)
+        # jrh - begin
+        print "Starting Interaction!"
+        filepath = self.canonic(frame.f_code.co_filename) 
+        texture = file_to_texture(filepath)
+        set_scene()
+        sourceIn3d = draw_source(texture)
+        # jrh - end
         self.print_stack_entry(self.stack[self.curindex])
         self.cmdloop()
         self.forget()
@@ -775,6 +785,7 @@ class Pdb(bdb.Bdb, cmd.Cmd):
             last = first + 10
         filename = self.curframe.f_code.co_filename
         breaklist = self.get_file_breaks(filename)
+        print 'Filename: ' + filename
         try:
             for lineno in range(first, last+1):
                 line = linecache.getline(filename, lineno, self.curframe.f_globals)
@@ -1218,6 +1229,9 @@ def runcall(*args, **kwds):
 
 def set_trace():
     Pdb().set_trace(sys._getframe().f_back)
+    print "Starting Trace!"
+    filepath = sys._getframe().f_back.f_code.co_filename
+    print filepath
 
 # Post-Mortem interface
 
