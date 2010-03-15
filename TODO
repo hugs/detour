@@ -1,0 +1,26 @@
+DONE:
+* Convert jpg from text file
+  - one long document 100 characters wide
+* Create tga from jpg
+* Create card in vpython from tga
+* Zoom - up and down
+* Get filename, linenumber from pdb
+* Convert file to texture
+* Load image into vpython
+
+TODO:
+* Create card - from text file - 8.5 x (no height limit)
+* Scroll up/down over large file
+* Hilight current line of execution 
+* Keep track of loaded cards 
+* Load 1 card
+* Load 2 cards
+* Center camera between 2 cards
+* Navigation prev/next between cards
+* Zoom from one file to next
+  - triangle
+  - parabola
+  - parabola with gravity
+* Zoom to top file
+* Zoom to line number
+* Highlight line number
