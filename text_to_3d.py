@@ -1,7 +1,7 @@
 from visual import *
 scene.background = color.white
 
-pysource = materials.texture(data=materials.loadTGA("test/portforward.tga"), mapping="sign")
+pysource = materials.texture(data=materials.loadTGA("test/sample_script.tga"), mapping="sign")
 b = box(axis = (0,0,1),
         size = (.01, 25, 50),
         material=pysource)
