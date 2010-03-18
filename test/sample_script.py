@@ -1,3 +1,6 @@
+import sys
+sys.path.append('../')
+
 import vdb; vdb.set_trace()
 import sample_module 
 
