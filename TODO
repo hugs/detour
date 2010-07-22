@@ -13,12 +13,12 @@ DONE:
   - webos/iphone zoom-out->move-left|right->zoom-in
 
 TODO:
-* Track down CPU performance issue in vpython
 * Highlight line number
-* Navigation prev/next between cards
-* Create card - from text file - 8.5 x (no height limit)
-* Scroll up/down over large file
 * Hilight current line of execution 
+* Track down CPU performance issue in vpython
+* Create card - from text file - 8.5 x (no height limit)
+* Navigation prev/next between cards
+* Scroll up/down over large file
 * Keep track of loaded cards 
 * Center camera between 2 cards
 * Zoom from one file to next
