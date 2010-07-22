@@ -1,7 +1,5 @@
-import sys
-sys.path.append('../')
+import detour.vdb; detour.vdb.set_trace()
 
-import vdb; vdb.set_trace()
 import sample_module 
 
 print sample_module.ctime()
