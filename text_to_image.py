@@ -3,9 +3,9 @@
 import os
 import sys
 
-from converters import get_file_parts
-from converters import file_to_jpeg
-from converters import jpeg_to_tga
+from detour.converters import get_file_parts
+from detour.converters import file_to_jpeg
+from detour.converters import jpeg_to_tga
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:
