@@ -14,6 +14,10 @@ def file_to_image(filepath):
     lines = open(filepath,'r').readlines()
     image_size = TOP_MARGIN + len(lines)*LINE_HEIGHT + BOTTOM_MARGIN
     
+    #FIXME: To use textures in OpenGL, the image size's height and width
+    # dimensions have to be a power of two.
+    # Ideally, though, the image_size is simply a function of how
+    # many lines long the file is.
     #image = Image.new("RGB", (1250, image_size), (255, 255, 255))
     image = Image.new("RGB", (1024, 512), (255, 255, 255))
     draw = ImageDraw.Draw(image)
