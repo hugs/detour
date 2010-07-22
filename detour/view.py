@@ -67,4 +67,30 @@ def load_from_file(filepath, pos=(0,0,0), effect=fade_in):
                       material=texture)
     effect(card)
     return card
+    
+
+class Card:
+    def __init__(self, filepath, pos=(0,0,0), effect=fade_in):
+        texture = file_to_texture(filepath) 
+        self.card = box(axis = (0,0,1),
+                          size = (.01, 25, 50),
+                          pos = pos,
+                          opacity = 0,
+                          material=texture)
+        effect(self.card)
  
+    def focus(self):
+        zoom_out()
+        origin = int(scene.center.x)
+        destination = int(self.card.pos.x)
+        if (destination - origin < 0):
+            direction = -1    # Scrollin' left
+        elif (destination - origin > 0):
+            direction = 1     # Scrollin' right
+        else:
+            direction = 1     # Not goin' anywhere
+        for i in range(origin,destination,direction):
+            scene.center = (i,0,0)
+            rate(100) 
+        zoom_in()
+
